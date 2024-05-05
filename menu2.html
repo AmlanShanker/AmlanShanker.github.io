@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MENU | | PAGE-2</title>
+    <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="menu2.css" />
+  </head>
+  <body>
+    <a href="index.html" class="logo"
+      ><img
+        style="
+          background-color: red;
+          float: left;
+          width: 100%;
+          height: 85px;
+          border: 2px solid black;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        "
+        src="/images/logo.jpeg"
+        alt="ok"
+    /></a>
+    <div class="menu">
+      <div class="heading">
+        <h1>Spice Symphony</h1>
+        <h3>&mdash;Menu&mdash;</h3>
+        <button class="dark" id="theme-toggle">
+          <ion-icon name="contrast-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="food-items">
+        <img src="/images/veg thali.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Veg Thali</h5>
+            <h5 class="price">&#8377;250</h5>
+          </div>
+          <p>
+            A delicious combination of vegetarian dishes, including dal, sabzi,
+            rice, roti, salad, and dessert.
+          </p>
+          <input
+            type="number"
+            id="quantity1"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/non veg thali.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Non-Veg Thali</h5>
+            <h5 class="price">&#8377;350</h5>
+          </div>
+          <p>
+            A satisfying assortment of non-vegetarian dishes, including chicken
+            curry, rice, roti, salad, and dessert.
+          </p>
+          <input
+            type="number"
+            id="quantity2"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/special.png" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Special Combo</h5>
+            <h5 class="price">&#8377;500</h5>
+          </div>
+          <p>
+            Our special combo includes a mix of both vegetarian and
+            non-vegetarian dishes, perfect for sharing.
+          </p>
+          <input
+            type="number"
+            id="quantity3"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/premium.png" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Premium Thali</h5>
+            <h5 class="price">&#8377;90</h5>
+          </div>
+          <p>
+            A premium thali boasts an opulent spread of culinary delights,
+            featuring gourmet dishes ranging from fragrant biryanis and
+            succulent kebabs to rich curries and decadent desserts, promising a
+            feast fit for royalty.
+          </p>
+          <input
+            type="number"
+            id="quantity4"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/chinese.png" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Chinese Combo</h5>
+            <h5 class="price">&#8377;400</h5>
+          </div>
+          <p>
+            A Chinese combo entices with an array of authentic delicacies, from
+            savory stir-fries and aromatic fried rice to crispy spring rolls and
+            delectable dumplings, offering a symphony of flavors that epitomize
+            the essence of Chinese cuisine.
+          </p>
+          <input
+            type="number"
+            id="quantity5"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/south.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>South Indian Thali</h5>
+            <h5 class="price">&#8377;300</h5>
+          </div>
+          <p>
+            A South Indian thali is a vibrant symphony of flavors, featuring a
+            medley of traditional dishes such as aromatic rice, tangy sambar,
+            crispy dosas, fluffy idlis, spicy chutneys, and cooling yogurt,
+            capturing the essence of the region' rich culinary heritage in every
+            bite.
+          </p>
+          <input
+            type="number"
+            id="quantity6"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="button">
+        <a href="menu.html"><button>1</button></a>
+        <a href="menu2.html"><button>2</button></a>
+      </div>
+    </div>
+
+    <div id="total-bill">
+      <h2>Total Bill</h2>
+      <div id="item-info"></div>
+      <input class="input" type="text" id="address" placeholder="Address" />
+
+      <p>Total Price: ₹<span id="total-price">0</span></p>
+      <p>Items Ordered:</p>
+      <ul id="ordered-items"></ul>
+      <a href="payment.html"
+        ><button class="place" onclick="placeOrder()">Place Order</button></a
+      >
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      themeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+      });
+    });
+
+    const items = [
+      { name: "Veg Thali", price: 250 },
+      { name: "Non-Veg Thali", price: 350 },
+      { name: "Special Combo", price: 500 },
+      { name: "Premium Thali", price: 90 },
+      { name: "Chinese Combo", price: 400 },
+      { name: "South Indian Thali", price: 300 },
+    ];
+
+    var totalItems = 0;
+    var totalPrice = 0;
+    var orderedItems = [];
+
+    function updateTotal() {
+      totalItems = 0;
+      totalPrice = 0;
+
+      items.forEach((item, index) => {
+        var quantity =
+          parseInt(document.getElementById("quantity" + (index + 1)).value) ||
+          0;
+        if (quantity < 0) {
+          alert("Please enter a valid quantity for " + item.name);
+          return;
+        }
+        totalItems += quantity;
+        totalPrice += quantity * item.price;
+      });
+
+      document.getElementById("total-price").innerText = totalPrice;
+      document.getElementById("item-info").innerHTML =
+        "Total Items: " + totalItems;
+      updateOrderedItemsList();
+    }
+
+    function placeOrder() {
+      if (totalItems === 0) {
+        alert("Please add items to your order before placing it.");
+        return;
+      }
+
+      var address = document.getElementById("address").value.trim();
+      if (address === "") {
+        alert("Please enter a valid address.");
+        return;
+      }
+
+      alert(
+        "Order Placed for " +
+          totalItems +
+          " items, Total Price: ₹" +
+          totalPrice +
+          ", Address: " +
+          address
+      );
+    }
+
+    function updateOrderedItemsList() {
+      var itemsList = document.getElementById("ordered-items");
+      itemsList.innerHTML = "";
+      items.forEach((item, index) => {
+        var quantity =
+          parseInt(document.getElementById("quantity" + (index + 1)).value) ||
+          0;
+        if (quantity > 0) {
+          var listItem = document.createElement("li");
+          listItem.innerText = item.name + " x" + quantity;
+          itemsList.appendChild(listItem);
+        }
+      });
+    }
+  </script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+
+  <body>
+    <a href="index.html" class="logo"
+      ><img
+        style="
+          background-color: red;
+          float: left;
+          width: 100%;
+          height: 85px;
+          border: 2px solid black;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        "
+        src="/images/logo.jpeg"
+        alt="ok"
+    /></a>
+    <div class="menu">
+      <div class="heading">
+        <h1>Spice Symphony</h1>
+        <h3>&mdash;Menu&mdash;</h3>
+        <button class="dark" id="theme-toggle">
+          <ion-icon name="contrast-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="food-items">
+        <img src="/images/paneer.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Kadhai Paneer</h5>
+            <h5 class="price">&#8377;230</h5>
+          </div>
+          <p>
+            Indulge in the ultimate comfort of our Kadhai Paneer with Cream.
+            Each succulent piece of paneer is lovingly cooked in a fragrant
+            medley of spices and enriched with velvety cream.
+          </p>
+          <input
+            type="number"
+            id="quantity1"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/rti.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Tandoori Roti</h5>
+            <h5 class="price">&#8377;10</h5>
+          </div>
+          <p>
+            Delight in the smoky aroma and irresistible flavor of freshly baked
+            tandoori roti, boasting a crisp exterior and pillowy softness
+            within, a perfect accompaniment to any savory dish.
+          </p>
+          <input
+            type="number"
+            id="quantity2"
+            placeholder="Quantity"
+            min="0"
+            max="10"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/chle.webp" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Chole Bhature</h5>
+            <h5 class="price">&#8377;100</h5>
+          </div>
+          <p>
+            Chole Bhature is a popular North Indian dish featuring spicy
+            chickpea curry (chole) paired with deep-fried bread (bhature),
+            creating a flavorful and satisfying meal.
+          </p>
+          <input
+            type="number"
+            id="quantity3"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/dosa.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Masala Dosa</h5>
+            <h5 class="price">&#8377;90</h5>
+          </div>
+          <p>
+            Masala Dosa is a South Indian delicacy made of fermented rice and
+            lentil batter, thinly spread on a hot griddle, filled with a spiced
+            potato mixture, and served with chutneys and sambar.
+          </p>
+          <input
+            type="number"
+            id="quantity4"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/mtr.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Matar Paneer</h5>
+            <h5 class="price">&#8377;130</h5>
+          </div>
+          <p>
+            Matar Paneer is a classic North Indian dish made with soft cubes of
+            paneer (Indian cottage cheese) cooked in a creamy tomato-based gravy
+            along with green peas, flavored with aromatic spices.
+          </p>
+          <input
+            type="number"
+            id="quantity5"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/fried.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Fried Rice</h5>
+            <h5 class="price">&#8377;80</h5>
+          </div>
+          <p>
+            Fried rice is a savory Asian dish made with cooked rice stir-fried
+            with vegetables, eggs, and often meat or seafood, seasoned with soy
+            sauce and other flavorings.
+          </p>
+          <input
+            type="number"
+            id="quantity6"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/tndchk.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Tandoori Chicken</h5>
+            <h5 class="price">&#8377;280</h5>
+          </div>
+          <p>
+            Tandoori chicken is a flavorful Indian dish consisting of marinated
+            chicken cooked in a traditional clay oven (tandoor), resulting in
+            smoky, tender, and aromatic meat with a vibrant red hue.
+          </p>
+          <input
+            type="number"
+            id="quantity7"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/chcken.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Butter Chicken</h5>
+            <h5 class="price">&#8377;250</h5>
+          </div>
+          <p>
+            It is a creamy and flavorful dish consisting of tender chicken
+            cooked in a rich tomato-based sauce with butter, cream, and a blend
+            of aromatic spices.
+          </p>
+          <input
+            type="number"
+            id="quantity8"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/white-sauce-pasta.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>White Sauce Pasta</h5>
+            <h5 class="price">&#8377;120</h5>
+          </div>
+          <p>
+            Indulge in the creamy richness of our White Sauce Pasta,
+            meticulously prepared with a velvety béchamel base and infused with
+            delicate herbs. Every mouthful offers a symphony of flavors
+            reminiscent of Italian culinary finesse, tailored for pasta
+            aficionados seeking a delightful experience.
+          </p>
+          <input
+            type="number"
+            id="quantity9"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/pas.webp" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Red Sauce Pasta</h5>
+            <h5 class="price">&#8377;120</h5>
+          </div>
+          <p>
+            Savor the tangy goodness of our Red Sauce Pasta, crafted with a
+            flavorful tomato base and aromatic herbs. Each bite delivers a burst
+            of Italian-inspired bliss, perfect for pasta lovers.
+          </p>
+          <input
+            type="number"
+            id="quantity10"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/hkk.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Hakka Noodles</h5>
+            <h5 class="price">&#8377;110</h5>
+          </div>
+          <p>
+            Embark on a culinary adventure with our Hakka Noodles, stir-fried to
+            perfection with fresh vegetables and aromatic spices. A tantalizing
+            fusion of Chinese and Indian flavors awaits, promising a delightful
+            dining experience.
+          </p>
+          <input
+            type="number"
+            id="quantity11"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/ptt.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Chilli Potato</h5>
+            <h5 class="price">&#8377;80</h5>
+          </div>
+          <p>
+            Delight your taste buds with our crispy Chilli Potato, a tantalizing
+            fusion of tender potatoes tossed in a spicy-sweet sauce. Each bite
+            offers a perfect balance of crunch and flavor, creating an
+            irresistible snack or appetizer.
+          </p>
+          <input
+            type="number"
+            id="quantity12"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/kulfi.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Kulfi</h5>
+            <h5 class="price">&#8377;60</h5>
+          </div>
+          <p>
+            Savor the luscious delight of our Kulfi, lovingly crafted with rich,
+            creamy textures and a medley of traditional flavors. Each bite
+            encapsulates the essence of indulgence, offering a blissful
+            experience reminiscent of cherished moments and sweet nostalgia.
+          </p>
+          <input
+            type="number"
+            id="quantity13"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/gulab.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Gulab Jamun</h5>
+            <h5 class="price">&#8377;65</h5>
+          </div>
+          <p>
+            Indulge in the tender perfection of our Gulab Jamun, meticulously
+            prepared to achieve the ideal balance of softness and sweetness.
+            Every bite unveils a burst of syrupy goodness, evoking the warmth of
+            traditional Indian desserts and igniting the senses with
+            unparalleled satisfaction.
+          </p>
+          <input
+            type="number"
+            id="quantity14"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="food-items">
+        <img src="/images/Rasgulla.jpg" alt="" />
+        <div class="details">
+          <div class="details-sub">
+            <h5>Rasgulla</h5>
+            <h5 class="price">&#8377;65</h5>
+          </div>
+          <p>
+            Indulge in the divine sweetness of our Rasgulla, expertly crafted
+            with spongy textures and immersed in a syrupy elixir. Each bite
+            captures the essence of Indian culinary heritage, offering a
+            symphony of flavors that creates unforgettable memories.
+          </p>
+          <input
+            type="number"
+            id="quantity15"
+            placeholder="Quantity"
+            min="0"
+            max="5"
+            oninput="updateTotal()"
+          />
+        </div>
+      </div>
+      <div class="button">
+        <a href="menu.html"><button>1</button></a>
+        <a href="menu2.html"><button>2</button></a>
+      </div>
+    </div>
+
+    <div id="total-bill">
+      <h2>Total Bill</h2>
+      <div id="item-info"></div>
+      <input class="input" type="text" id="address" placeholder="Address" />
+
+      <p>Total Price: ₹<span id="total-price">0</span></p>
+      <p>Items Ordered:</p>
+      <ul id="ordered-items"></ul>
+      <a href="payment.html"
+        ><button class="place" onclick="placeOrder()">Place Order</button></a
+      >
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      themeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+      });
+    });
+    var itemPrices = [
+      230, 10, 100, 90, 130, 80, 280, 250, 120, 120, 110, 80, 60, 65, 65,
+    ];
+    var itemNames = [
+      "Kadhai Paneer",
+      "Tandoori Roti",
+      "Chole Bhature",
+      "Masala Dosa",
+      "Matar Paneer",
+      "Fried Rice",
+      "Tandoori Chicken",
+      "Butter Chicken",
+      "White Sauce Pasta",
+      "Red Sauce Pasta",
+      "Hakka Noodles",
+      "Chilli Potato",
+      "Kulfi",
+      "Gulab Jamun",
+      "Rasgulla",
+    ];
+    var totalItems = 0;
+    var totalPrice = 0;
+    var orderedItems = [];
+    function updateTotal() {
+      totalItems = 0;
+      totalPrice = 0;
+      for (var i = 0; i < itemPrices.length; i++) {
+        var quantity =
+          parseInt(document.getElementById("quantity" + (i + 1)).value) || 0;
+        if (quantity < 0) {
+          alert("Please enter a valid quantity for " + itemNames[i]);
+          return;
+        }
+        totalItems += quantity;
+        totalPrice += quantity * itemPrices[i];
+      }
+      document.getElementById("total-price").innerText = totalPrice;
+      document.getElementById("item-info").innerHTML =
+        "Total Items: " + totalItems;
+      updateOrderedItemsList();
+    }
+    function placeOrder() {
+      if (totalItems === 0) {
+        alert("Please add items to your order before placing it.");
+        return;
+      }
+      var address = document.getElementById("address").value.trim();
+      if (address === "") {
+        alert("Please enter a valid address.");
+        return;
+      }
+      alert(
+        "Order Placed for " +
+          totalItems +
+          " items, Total Price: ₹" +
+          totalPrice +
+          ", Address: " +
+          address
+      );
+    }
+    function updateOrderedItemsList() {
+      var itemsList = document.getElementById("ordered-items");
+      itemsList.innerHTML = "";
+      for (var i = 0; i < itemNames.length; i++) {
+        var quantity =
+          parseInt(document.getElementById("quantity" + (i + 1)).value) || 0;
+        if (quantity > 0) {
+          var item = document.createElement("li");
+          item.innerText = itemNames[i] + " x" + quantity;
+          itemsList.appendChild(item);
+        }
+      }
+    }
+  </script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+</html>
